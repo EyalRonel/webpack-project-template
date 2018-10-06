@@ -1,4 +1,13 @@
 import './main.css';
-import bar from './bar';
+// import bar from './bar';
+//
+// document.write(bar());
 
-document.write(bar());
+import React from "react";
+import ReactDOM from "react-dom";
+
+const Index = () => {
+    return <div>Hello React!</div>;
+};
+
+ReactDOM.render(<Index />, document.getElementById("root"));
