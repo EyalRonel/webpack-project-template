@@ -1,13 +1,37 @@
 import './main.css';
-// import bar from './bar';
-//
-// document.write(bar());
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { combineReducers, createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-import React from "react";
-import ReactDOM from "react-dom";
+import productsReducer from './reducers/products-reducer';
+import userReducer from './reducers/user-reducer';
 
-const Index = () => {
-    return <div>Hello React!</div>;
+import App from './App';
+
+/**
+* Redux Store Setup
+* */
+const allReducers = combineReducers({
+  products: productsReducer,
+  user: userReducer,
+});
+
+const initialState = {
+    products: [{name: 'iPhone'}],
+    user: 'Michael'
 };
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+const enableReduxDevTools = window.devToolsExtension && window.devToolsExtension();
+
+const store = createStore(allReducers, initialState, enableReduxDevTools);
+
+/**
+ * End of Redux Setup
+ * */
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root"));
