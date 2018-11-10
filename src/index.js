@@ -5,6 +5,7 @@ import './main.css';
  * */
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { Provider } from 'react-redux';
 
 /**
@@ -15,14 +16,14 @@ import store from './store';
 /**
  * Components
  * */
-import App from './App';
+import App from './components/App';
 
 /**
  * Render App
  * */
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+        <App />
   </Provider>,
   document.getElementById("root")
 );

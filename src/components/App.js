@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { updateUser, apiRequest } from './actions/user-actions';
+import { updateUser, apiRequest } from '../actions/user-actions';
 import { createSelector, createStructuredSelector } from 'reselect';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+/**
+ * Child Components
+ * */
+import Map from './common/Map';
+import Temp from './common/Temp';
 
 class App extends Component{
   constructor(props){
@@ -22,16 +29,22 @@ class App extends Component{
   render(){
 
     return (
-      <div>
-        <div>Webpack React/Redux/Reselect Application template</div>
-        <input onChange={this.onUpdateUser} />
-        {this.props.user}
-      </div>
+        <Router>
+            <div className="app">
+              <Switch>
+                <Route exact path="/" component={Map} />
+                <Route exact path="/temp" component={Temp} />
+                <Route exact path="*" component={() => (<h3>No Found</h3>)} />
+              </Switch>
+            </div>
+        </Router>
     );
   }
 }
 
-
+/*<div>Webpack React/Redux/Reselect Application template</div>*/
+/*<input onChange={this.onUpdateUser} />*/
+/*{this.props.user}*/
 
 // const mapStateToProps = (state, props) => {
 //   console.log('mapStateToProps',props);
