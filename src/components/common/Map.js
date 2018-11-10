@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Map = () => (
-    <div className="map">
-        This is a map
-    </div>
-);
+class Map extends Component{
+    constructor(props){
+        super(props);
+    };
+
+    render(){
+        return (
+            <div className="map">
+                This is a map
+            </div>
+        )
+    }
+}
 
 export default Map;
 

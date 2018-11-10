@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 /**
  * Child Components
  * */
+import Page1 from  './pages/Page1';
+import Page2 from  './pages/Page2';
 import Map from './common/Map';
 import Temp from './common/Temp';
 
@@ -32,8 +34,9 @@ class App extends Component{
         <Router>
             <div className="app">
               <Switch>
-                <Route exact path="/" component={Map} />
-                <Route exact path="/temp" component={Temp} />
+                <Route exact path="/" component={Page1} />
+                  <Route exact path="/page2" component={Page2} />
+                <Route exact path="/temp/:id?" component={Temp} />
                 <Route exact path="*" component={() => (<h3>No Found</h3>)} />
               </Switch>
             </div>
