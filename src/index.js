@@ -5,41 +5,17 @@ import './main.css';
  * */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import thunk from 'redux-thunk';
-import { applyMiddleware, compose, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 /**
- * Reducers
+ * Store
  * */
-import productsReducer from './reducers/products-reducer';
-import userReducer from './reducers/user-reducer';
+import store from './store';
 
 /**
  * Components
  * */
 import App from './App';
-
-/**
-* Store
-* */
-const allReducers = combineReducers({
-  products: productsReducer,
-  user: userReducer,
-});
-
-const allStoreEnhancers = compose(
-  applyMiddleware(thunk),
-  window.devToolsExtension && window.devToolsExtension()
-);
-
-const initialState = {
-    products: [{name: 'iPhone'}],
-    user: 'Michael'
-};
-
-const store = createStore(allReducers, initialState, allStoreEnhancers);
-
 
 /**
  * Render App
