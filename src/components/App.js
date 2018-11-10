@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
  * */
 import Page1 from  './pages/Page1';
 import Page2 from  './pages/Page2';
+import Header from './common/Header';
 import Map from './common/Map';
 import Temp from './common/Temp';
 
@@ -33,6 +34,7 @@ class App extends Component{
     return (
         <Router>
             <div className="app">
+              <Header/>
               <Switch>
                 <Route exact path="/" component={Page1} />
                   <Route exact path="/page2" component={Page2} />
