@@ -14,9 +14,4 @@ const initialState = {
 
 const store = createStore(allReducers, initialState, allStoreEnhancers);
 
-// export {
-//     store
-// };
-
-
 export default store;
