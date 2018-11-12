@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
  * Store
  * */
 import store from './store';
+window.store = store;
 
 /**
  * Components

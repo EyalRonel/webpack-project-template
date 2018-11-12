@@ -9,7 +9,8 @@ const allStoreEnhancers = compose(
 
 const initialState = {
     products: [{name: 'iPhone'}],
-    user: 'Michael'
+    user: 'Michael',
+    counter: 0,
 };
 
 const store = createStore(allReducers, initialState, allStoreEnhancers);
