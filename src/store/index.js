@@ -8,7 +8,12 @@ const allStoreEnhancers = compose(
 );
 
 const initialState = {
-    products: [{name: 'iPhone'}],
+    products: [
+      {name: 'iPhone'},
+      {name: 'iPad'},
+      {name: 'MacBook'},
+      {name: 'iMac'}
+      ],
     user: 'Michael',
     counter: 0,
 };
