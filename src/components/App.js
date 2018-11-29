@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 /**
  * Child Components
  * */
+import GithubRepos from  './pages/GithubRepos';
 import Page1 from  './pages/Page1';
 import Page2 from  './pages/Page2';
 import Products from  './pages/Products';
@@ -23,11 +24,9 @@ class App extends Component{
   }
 
   componentDidMount(){
-      this.props.onApiRequest();
   }
 
   onUpdateUser(event){
-    this.props.onUpdateUser(event.target.value);
   }
 
   render(){
@@ -37,7 +36,8 @@ class App extends Component{
             <div className="app">
               <Header/>
               <Switch>
-                <Route exact path="/" component={Page1} />
+                <Route exact path="/" component={GithubRepos} />
+                <Route exact path="/page1" component={Page1} />
                 <Route exact path="/page2" component={Page2} />
                 <Route exact path="/products" component={Products} />
                 <Route exact path="/temp/:id?" component={Temp} />
@@ -91,8 +91,6 @@ const mapStateToProps = createStructuredSelector({
 // };
 
 const mapActionsToProps =  {
-  onUpdateUser: updateUser,
-  onApiRequest: apiRequest
 };
 
 // const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
